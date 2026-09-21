@@ -1,3 +1,4 @@
+ HEAD
 # API de Catálogo Funko Pop - Game of Thrones
 
 API RESTful desenvolvida com Node.js, Express, TypeScript, Sequelize (PostgreSQL) e documentação Swagger.
@@ -36,3 +37,6 @@ API RESTful desenvolvida com Node.js, Express, TypeScript, Sequelize (PostgreSQL
 | POST | /recursos | Cria um novo Funko Pop |
 | PUT | /recursos/:id | Atualiza um Funko Pop existente |
 | DELETE | /recursos/:id | Remove um Funko Pop |
+
+# LDW-AT1-API-RESTful-com-Node.js-Express-Sequelize-e-Swagger
+ 4510bed0cdda6b97765f548036790d3bcf6f85b2
