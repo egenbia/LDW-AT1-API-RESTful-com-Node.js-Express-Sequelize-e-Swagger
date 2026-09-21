@@ -1,1 +1,1 @@
-# -LDW---AT1-API-RESTful-com-Node.js-Express-Sequelize-e-Swagger
+# -LDW-AT1-API-RESTful-com-Node.js-Express-Sequelize-e-Swagger
