@@ -21,6 +21,18 @@ const router = Router();
  *                 $ref: '#/components/schemas/FunkoPop'
  *       500:
  *         description: Erro interno do servidor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                 erro:
+ *                   type: string
+ *             example:
+ *               mensagem: "Erro ao buscar os Funko Pops."
+ *               erro: "Detalhe técnico do erro"
  */
 router.get('/recursos', getAll);
 
@@ -47,10 +59,40 @@ router.get('/recursos', getAll);
  *               $ref: '#/components/schemas/FunkoPop'
  *       400:
  *         description: ID inválido
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *             example:
+ *               mensagem: "ID inválido."
  *       404:
  *         description: Funko Pop não encontrado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *             example:
+ *               mensagem: "Funko Pop não encontrado."
  *       500:
  *         description: Erro interno do servidor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                 erro:
+ *                   type: string
+ *             example:
+ *               mensagem: "Erro ao buscar o Funko Pop."
+ *               erro: "Detalhe técnico do erro"
  */
 router.get('/recursos/:id', getById);
 
@@ -76,8 +118,29 @@ router.get('/recursos/:id', getById);
  *               $ref: '#/components/schemas/FunkoPop'
  *       400:
  *         description: Campos obrigatórios ausentes
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *             example:
+ *               mensagem: "Campos obrigatórios ausentes: personagem, casa, numeroColecao e preco são obrigatórios."
  *       500:
  *         description: Erro interno do servidor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                 erro:
+ *                   type: string
+ *             example:
+ *               mensagem: "Erro ao criar o Funko Pop."
+ *               erro: "Detalhe técnico do erro"
  */
 router.post('/recursos', create);
 
@@ -110,10 +173,40 @@ router.post('/recursos', create);
  *               $ref: '#/components/schemas/FunkoPop'
  *       400:
  *         description: ID inválido
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *             example:
+ *               mensagem: "ID inválido."
  *       404:
  *         description: Funko Pop não encontrado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *             example:
+ *               mensagem: "Funko Pop não encontrado."
  *       500:
  *         description: Erro interno do servidor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                 erro:
+ *                   type: string
+ *             example:
+ *               mensagem: "Erro ao atualizar o Funko Pop."
+ *               erro: "Detalhe técnico do erro"
  */
 router.put('/recursos/:id', update);
 
@@ -136,10 +229,40 @@ router.put('/recursos/:id', update);
  *         description: Registro removido com sucesso (sem conteúdo)
  *       400:
  *         description: ID inválido
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *             example:
+ *               mensagem: "ID inválido."
  *       404:
  *         description: Funko Pop não encontrado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *             example:
+ *               mensagem: "Funko Pop não encontrado."
  *       500:
  *         description: Erro interno do servidor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                 erro:
+ *                   type: string
+ *             example:
+ *               mensagem: "Erro ao remover o Funko Pop."
+ *               erro: "Detalhe técnico do erro"
  */
 router.delete('/recursos/:id', remove);
 
