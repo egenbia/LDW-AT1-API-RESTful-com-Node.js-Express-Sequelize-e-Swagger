@@ -28,7 +28,7 @@ const init = async (): Promise<void> => {
   console.log('📦 Tabelas sincronizadas com o banco de dados.');
 
   app.listen(PORT, () => {
-    console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
+    console.log(`🚀 Servidor rodando em http://localhost:${PORT}/api-docs`) 
   });
 };
 
