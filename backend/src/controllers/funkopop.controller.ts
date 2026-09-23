@@ -68,12 +68,19 @@ export const update = async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
     const funkoId = Number(id);
 
-    if (!id || Array.isArray(id) || isNaN(funkoId)) {
+    if (!id || isNaN(funkoId)) {
       res.status(400).json({ mensagem: 'ID inválido.' });
       return;
     }
 
     const { personagem, casa, numeroColecao, preco, emEstoque } = req.body;
+
+    if (!personagem || !casa || numeroColecao === undefined || preco === undefined) {
+      res.status(400).json({
+        mensagem: 'Campos obrigatórios ausentes: personagem, casa, numeroColecao e preco são obrigatórios.',
+      });
+      return;
+    }
 
     const funko = await FunkoPop.findByPk(funkoId);
 
@@ -83,7 +90,6 @@ export const update = async (req: Request, res: Response): Promise<void> => {
     }
 
     await funko.update({ personagem, casa, numeroColecao, preco, emEstoque });
-
     res.status(200).json(funko);
   } catch (error) {
     res.status(500).json({ mensagem: 'Erro ao atualizar o Funko Pop.', erro: (error as Error).message });
