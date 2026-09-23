@@ -13,16 +13,10 @@ permitindo cadastrar, consultar, atualizar e remover itens da coleção
 ## Instalação
 
 1. Clone o repositório
-
-2. Instale as dependências:
-   pnpm install
-3. Copie o arquivo `.env.example` para `.env` e preencha com suas credenciais do banco:
-   cp .env.example .env
-4. Rode o servidor em modo desenvolvimento:
-   pnpm dev
-
-5. Acesse a documentação interativa em:
-   http://localhost:3000/api-docs
+2. pnpm install
+3. Copie o arquivo `.env.example` para `.env` e preencha com suas credenciais do banco
+4. pnpm dev
+5. http://localhost:3000/api-docs
 
 ## Endpoints
 
