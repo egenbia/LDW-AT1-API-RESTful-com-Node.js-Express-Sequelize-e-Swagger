@@ -48,7 +48,7 @@ router.get('/recursos', getAll);
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *         description: ID do Funko Pop
  *     responses:
  *       200:

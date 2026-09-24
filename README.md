@@ -1,8 +1,6 @@
 # API de Catálogo Funko Pop - Game of Thrones
 
-API RESTful desenvolvida com Node.js, Express, TypeScript, Sequelize (PostgreSQL) e documentação Swagger para gerenciamento de um catálogo de Funko Pops da franquia Game of Thrones,
-permitindo cadastrar, consultar, atualizar e remover itens da coleção
-(personagem, casa, número da coleção, preço e status de estoque).
+API RESTful para gerenciamento de um catálogo de Funko Pops da franquia Game of Thrones. Permite cadastrar, consultar, atualizar e remover itens da coleção (personagem, casa, número da coleção, preço e status de estoque).
 
 ## Tecnologias
 
@@ -10,61 +8,61 @@ permitindo cadastrar, consultar, atualizar e remover itens da coleção
 - Sequelize ORM + PostgreSQL (Supabase)
 - Swagger (swagger-ui-express + swagger-jsdoc)
 
+## Pré-requisitos
+
+- Node.js
+- pnpm
+- Banco PostgreSQL (Supabase) com credenciais de acesso
+
 ## Instalação
 
-1. Clone o repositório
-2. pnpm install
-3. Copie o arquivo `.env.example` para `.env` e preencha com suas credenciais do banco
-4. pnpm dev
-5. http://localhost:3000/api-docs
+1. Clone o repositório:
+
+```bash
+   git clone <url-do-repositorio>
+   cd backend
+```
+
+2. Instale as dependências:
+
+```bash
+   pnpm install
+```
+
+3. Copie o arquivo `.env.example` para `.env` e preencha com as credenciais do banco:
+
+```bash
+   cp .env.example .env
+```
+
+4. Inicie o servidor em modo de desenvolvimento:
+
+```bash
+   pnpm dev
+```
+
+5. Acesse a documentação Swagger em: http://localhost:3000/api-docs
 
 ## Endpoints
 
-| Método | Rota          | Descrição                       |
-| ------ | ------------- | ------------------------------- |
-| GET    | /recursos     | Lista todos os Funko Pops       |
-| GET    | /recursos/:id | Busca um Funko Pop por ID       |
-| POST   | /recursos     | Cria um novo Funko Pop          |
-| PUT    | /recursos/:id | Atualiza um Funko Pop existente |
-| DELETE | /recursos/:id | Remove um Funko Pop             |
+| Método | Rota            | Descrição                       |
+| ------ | --------------- | ------------------------------- |
+| GET    | `/recursos`     | Lista todos os Funko Pops       |
+| GET    | `/recursos/:id` | Busca um Funko Pop por ID       |
+| POST   | `/recursos`     | Cria um novo Funko Pop          |
+| PUT    | `/recursos/:id` | Atualiza um Funko Pop existente |
+| DELETE | `/recursos/:id` | Remove um Funko Pop             |
 
-Sim, boa ideia — deixa o processo documentado pra quem for avaliar/rodar o projeto depois. Adicione essa seção no `README.md`, depois da parte de "Instalação":
+## Como testar
 
-## Como Testar
+No Swagger UI, use o botão **"Try it out"** em cada endpoint, seguindo esta ordem:
 
-1. Suba o servidor:
+1. **POST /recursos**: crie um novo Funko Pop preenchendo o JSON de exemplo.
+2. **GET /recursos**: liste todos os registros cadastrados.
+3. **GET /recursos/{id}**: busque o registro criado usando o ID retornado no POST.
+4. **PUT /recursos/{id}**: atualize os dados do registro.
+5. **DELETE /recursos/{id}**: remova o registro.
 
-```markdown
-cd backend
+### Verificando a persistência
 
-pnpm dev
-```
-
-2. Confirme no terminal que apareceu:
-
-```
-
-✅ Conexão com o banco de dados estabelecida com sucesso.
-📦 Tabelas sincronizadas com o banco de dados.
-🚀 Servidor rodando em http://localhost:3000
-```
-
- 3. Acesse a documentação interativa no navegador:
-
-```
-
-http://localhost:3000/api-docs
-```
-
-4. No Swagger UI, teste cada endpoint usando o botão **"Try it out"**:
-
-```
-
-- **POST /recursos** — crie um novo Funko Pop preenchendo o JSON de exemplo.
-- **GET /recursos** — liste todos os registros cadastrados.
-- **GET /recursos/{id}** — busque o registro criado pelo ID retornado no POST.
-- **PUT /recursos/{id}** — atualize os dados do registro.
-- **DELETE /recursos/{id}** — remova o registro.
-```
-
-5. Para confirmar a persistência, acesse o painel do Supabase → **Table Editor** → tabela `funko_pops`, e verifique que os dados criados/atualizados/removidos refletem corretamente.
+Para confirmar que os dados foram salvos, acesse o painel do Supabase, abra **Table Editor** e selecione a tabela `funko_pops`. Os registros criados, atualizados e removidos devem refletir as operações feitas na API.
