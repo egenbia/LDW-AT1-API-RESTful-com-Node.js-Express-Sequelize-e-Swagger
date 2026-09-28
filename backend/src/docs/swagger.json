@@ -250,9 +250,9 @@
         "in": "path",
         "name": "id",
         "required": true,
-        "schema": { "type": "integer" },
-        "description": "ID do Funko Pop",
-        "example": 1
+        "schema": { "type": "string" },
+        "description": "ID do Funko Pop (numérico)",
+        "example": "1"
       }
     },
     "schemas": {
